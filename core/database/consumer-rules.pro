@@ -1,0 +1,1 @@
+# Proguard rules for core:database (empty for now) 

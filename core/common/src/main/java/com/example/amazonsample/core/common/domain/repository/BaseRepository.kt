@@ -1,0 +1,14 @@
+package com.example.amazonsample.core.common.domain.repository
+
+import com.example.amazonsample.core.common.Result
+import kotlinx.coroutines.flow.Flow
+
+interface BaseRepository<T> {
+    suspend fun get(id: String): Result<T>
+    suspend fun getAll(): Result<List<T>>
+    suspend fun insert(item: T): Result<Unit>
+    suspend fun update(item: T): Result<Unit>
+    suspend fun delete(id: String): Result<Unit>
+    fun observe(id: String): Flow<Result<T>>
+    fun observeAll(): Flow<Result<List<T>>>
+} 
