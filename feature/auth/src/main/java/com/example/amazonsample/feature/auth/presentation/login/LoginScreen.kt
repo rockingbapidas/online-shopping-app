@@ -81,10 +81,10 @@ fun LoginScreen(
             )
         )
 
-        if (state.error != null) {
+        state.error?.let { error ->
             Spacer(modifier = Modifier.height(16.dp))
             Text(
-                text = state.error,
+                text = error,
                 color = MaterialTheme.colorScheme.error,
                 style = MaterialTheme.typography.bodyMedium
             )
